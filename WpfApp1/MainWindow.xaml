@@ -6,7 +6,27 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <Window.Resources>
+        <Style TargetType="Hyperlink">
+            <Setter Property="TextDecorations" Value="None"/>
+            <Setter Property="Foreground" Value="#0066CC"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="TextDecorations" Value="UnderLine"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <TextBlock Text="默认:" FontSize="20">
+            <Hyperlink>www.baidu.com</Hyperlink>
+        </TextBlock>
+        <Expander Header="Header">
+            <ListBox>
+                <ListBoxItem Content="Item1"/>
+                <ListBoxItem Content="Item1"/>
+                <ListBoxItem Content="Item1"/>
+            </ListBox>
+        </Expander>
+    </StackPanel>
 </Window>
